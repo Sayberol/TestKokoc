@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Главная страница тестирования учасника{% endblock %}
+
+{% block content %}
+    <h1>Здравствуй, {{ user.first_name }}!</h1>
+    <p>Начать тестирование: <a href="{% url "quiz" %}">Перейти</a>.</p>
+    <p><a href="{% url "logout" %}">Выход</a>.</p>
+{% endblock %}

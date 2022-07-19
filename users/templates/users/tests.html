@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Test{% endblock %}
+
+{% block content %}
+    <p>Это твои вопросы.</p>
+    <form action="tests.html" method="get">
+    {% for question in list_question %}
+        {{ question.question__text }}
+        {% for answer in list_answer %}
+            {% if question.question__text == answer.question.text %}
+                <br>
+                <input type="checkbox" name="is_closed" value="closed">
+                {{ answer.answer.text }}
+            {% endif %}
+        {% endfor %}
+        <br>
+        <br>
+    {% endfor %}
+    </form>
+    <br>
+    <button type="submit">Закончить тест</button>
+{% endblock %}
